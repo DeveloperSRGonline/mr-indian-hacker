@@ -1,0 +1,115 @@
+.connect-section {
+    width: 100%;
+    padding: 100px 50px;
+    background-color: #111;
+    color: white;
+    text-align: center;
+
+    h2 {
+        font-size: 2.8rem;
+        background: linear-gradient(90deg, #00ff99, #00dd88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #aaa;
+        max-width: 600px;
+        margin: 0 auto 50px;
+    }
+
+    .connect-content {
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+
+        .connect-left {
+            flex: 1;
+            min-width: 300px;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                input, textarea {
+                    padding: 12px 20px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    background-color: #222;
+                    color: white;
+                    border-radius: 8px;
+                    resize: none;
+                }
+
+                button {
+                    padding: 12px 40px;
+                    background-color: #00ff99;
+                    color: #111;
+                    font-weight: 600;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: #00dd88;
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+
+        .connect-right {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .contact-info, .opportunities {
+                background-color: #222;
+                padding: 30px;
+                border-radius: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+
+                h3 {
+                    margin-bottom: 20px;
+                    background: linear-gradient(90deg, #ff7096, #8b65f9);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                p, li {
+                    color: #aaa;
+                    margin: 10px 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                ul {
+                    padding: 0;
+                    list-style: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 50px 20px;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .connect-content {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+}
