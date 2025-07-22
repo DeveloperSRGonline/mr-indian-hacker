@@ -28,7 +28,7 @@
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 50px;
   }
@@ -37,6 +37,22 @@
     font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 1px;
+
+    img {
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    margin: 0 35rem 0 1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
   }
 
   .menu {
@@ -58,25 +74,35 @@
         position: relative;
         cursor: pointer;
         padding: 2px 0;
-        transition: color 0.4s ease;
+        transition: all 0.4s ease;
+
+        a {
+          text-decoration: none;
+          color: #ffffff;
+          transition: all 0.4s ease;
+        }
 
         &::after {
           content: "";
           position: absolute;
           bottom: 0;
           left: 0;
-          height: 1px;
+          height: 2px;
           width: 0%;
-          background-color: orange;
+          background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
           transition: width 0.4s ease;
         }
 
-        &:hover {
-          color: orange;
+        &:hover a {
+          background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+        }
 
-          &::after {
-            width: 100%;
-          }
+        &:hover::after {
+          width: 100%;
         }
       }
     }
@@ -118,7 +144,34 @@
       .nav-links li {
         width: 100%;
         padding: 10px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        a {
+          color: #ffffff;
+          transition: all 0.4s ease;
+        }
+
+        &:hover a {
+          background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 0%;
+          background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+          transition: width 0.4s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
       }
     }
   }

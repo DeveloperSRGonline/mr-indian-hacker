@@ -1,27 +1,38 @@
+import { Routes, Route } from "react-router-dom";
 import {
   HeroSection,
   AboutSection,
   Experiments,
-  SocialImpact,
   Connect,
   Footer,
   Team,
+  SocialImpact
 } from "./Pages";
 
-import { Navbar } from "./components";
+import { Navbar, Loader } from "./components";
 
 function App() {
   return (
-    <div className="">
+    <>
+      <Loader />
       <Navbar />
-      <HeroSection />
-      <Experiments />
-      <AboutSection />
-      <Team />
-      <SocialImpact />
-      <Connect />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <HeroSection />
+            <Experiments />
+            <AboutSection />
+            <Team />
+            <SocialImpact />
+            <Connect />
+            <Footer />
+          </>
+        } />
+        <Route path="/about" element={<AboutSection />} />
+        <Route path="/experiments" element={<Experiments />} />
+        <Route path="/connect" element={<Connect />} />
+      </Routes>
+    </>
   );
 }
 
