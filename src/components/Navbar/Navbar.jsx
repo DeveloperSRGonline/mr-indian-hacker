@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ onLoginClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -53,6 +53,9 @@ const Navbar = () => {
             <li>
               <Link to="/connect" onClick={() => setIsOpen(false)}>Connect</Link>
             </li>
+            <li className="login-text" onClick={onLoginClick}>
+              Login
+            </li>
           </ul>
         </div>
       </div>
@@ -61,4 +64,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
+  

@@ -21,8 +21,17 @@ const HeroSection = () => {
       <div className="hero-content">
         <h1 className="hero-title">Mr. Indian Hacker</h1>
         <h2>We Do Everything.</h2>
-        <p>Type <span>3</span> Fun.</p>
-        <button className="hero-cta">Explore More</button>
+        <p>
+          Type <span>3</span> Fun.
+        </p>
+        <a
+          className="hero-cta"
+          href="https://www.youtube.com/MRINDIANHACKER"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join Titanium Army
+        </a>
       </div>
     </section>
   );

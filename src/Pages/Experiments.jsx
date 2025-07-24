@@ -1,50 +1,44 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import "./Experiments.scss";
-
-const videos = [
-  "https://www.youtube.com/embed/ey3tAUyVCi8",
-  "https://www.youtube.com/embed/fr0U4VOhZ0c",
-  "https://www.youtube.com/embed/sTeNcFYyMRw",
-  "https://www.youtube.com/embed/eOY53XPKUgc",
-  "https://www.youtube.com/embed/DUEgm-uxR0s",
-  "https://www.youtube.com/embed/Fryh6Uz3TAk",
+import { CardCarousel } from "../components/ui/card-carousel";
+const mockups = [
+  {
+    title: "100Kg Eno Vs Water - 100% Real",
+    img: "https://i.ytimg.com/vi/xssnmM1gH1I/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCxkN0D716j6cs0pzk1_EJl48J9rw",
+    link: "https://youtu.be/xssnmM1gH1I?si=ab8x08vM9TQe_uog",
+  },
+  {
+    title: "Finally We Found This ?",
+    img: "https://i.ytimg.com/vi/DEtNELkJRJg/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBMHkBijo9vOn5V7AmebjszrNeXhQ",
+    link: "https://youtu.be/DEtNELkJRJg?si=28MxA1Za2qWZKoGf",
+  },
+  {
+    title: "My Top Secret Underground Bunker...",
+    img: "https://i.ytimg.com/vi/mvwrfgnweOM/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAbqmsYnFUkIFqrJp4JDybZjK_7Hw",
+    link: "https://youtu.be/mvwrfgnweOM?si=K11GVYBiMz1LKiay",
+  },
+  {
+    title: "Durability Test Of A Fan ",
+    img: "https://i.ytimg.com/vi/W3Ck_SFdAbs/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBAUfludGFjk43v6n9RXp-4fC3SjQ",
+    link: "https://youtu.be/W3Ck_SFdAbs?si=8GgWOpxbrXi5yPNK",
+  },
+  {
+    title: "Hide And Seek Challenge In 200000 Balloons",
+    img: "https://i.ytimg.com/vi/9-80U342hCI/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCj21ob-LQ9oUSU4YqmbCcNUyAjMQ",
+    link: "https://youtu.be/9-80U342hCI?si=T7w8o_iiB7m4xxM1",
+  },
+  {
+    title: "1000 Kg - Watermelon Juice Making Challenge",
+    img: "https://i.ytimg.com/vi/jSSD2IHNZF0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAtQhQLSgvCnkYf2_CTEZKudF4FBQ",
+    link: "https://youtu.be/jSSD2IHNZF0?si=1YjJ1RiJHLjE4RPz",
+  },
 ];
 
 const Experiments = () => {
-  const [index, setIndex] = useState(0);
-
-  const rotateStack = (dir) => {
-    setIndex((prev) =>
-      dir === "up" ? (prev + 1) % videos.length : (prev - 1 + videos.length) % videos.length
-    );
-  };
-
-  const getVideo = (offset) => {
-    return videos[(index + offset + videos.length) % videos.length];
-  };
-
   return (
-    <section className="experiments-stack">
-      <h2 className="section-heading">Our Crazy Experiments</h2>
-      <p className="section-subtitle">Where creativity meets science.</p>
-
-      <div className="stack-container">
-        <motion.div className="card back" key={getVideo(2)}>
-          <iframe src={getVideo(2)} allowFullScreen></iframe>
-        </motion.div>
-        <motion.div className="card middle" key={getVideo(1)}>
-          <iframe src={getVideo(1)} allowFullScreen></iframe>
-        </motion.div>
-        <motion.div className="card front" key={getVideo(0)}>
-          <iframe src={getVideo(0)} allowFullScreen></iframe>
-        </motion.div>
-
-        <div className="buttons">
-          <button onClick={() => rotateStack("up")}>▲</button>
-          <button onClick={() => rotateStack("down")}>▼</button>
-        </div>
-      </div>
+    <section className="experiments-section">
+      <h2>Latest Experiments</h2>
+      <CardCarousel items={mockups} />
     </section>
   );
 };

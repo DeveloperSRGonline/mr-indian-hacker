@@ -1,19 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Connect.scss';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Connect = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert('Message submitted!');
+        setFormData({
+            name: '',
+            email: '',
+            company: '',
+            message: ''
+        });
+    };
+
     return (
         <section className="connect-section">
             <h2>Let's Collaborate</h2>
             <p>We are always open to exciting collaborations. Reach out to us below!</p>
             <div className="connect-content">
                 <div className="connect-left">
-                    <form>
-                        <input type="text" placeholder="Full Name" required />
-                        <input type="email" placeholder="Email" required />
-                        <input type="text" placeholder="Company / Organization" />
-                        <textarea placeholder="Your Message" required></textarea>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Full Name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="company"
+                            placeholder="Company / Organization"
+                            value={formData.company}
+                            onChange={handleChange}
+                        />
+                        <textarea
+                            name="message"
+                            placeholder="Your Message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        ></textarea>
                         <button type="submit">Send Message</button>
                     </form>
                 </div>

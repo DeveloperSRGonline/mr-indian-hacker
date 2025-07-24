@@ -7,27 +7,24 @@
 html,
 body {
   background-color: #111;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
 .hero-section {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
 
   .particles-background {
-    background-color: #000;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 80%;
+    background-color: #000;
     z-index: 0;
     pointer-events: none;
   }
@@ -38,24 +35,22 @@ body {
     width: 100%;
     text-align: center;
     color: white;
-    padding: 150px 20px 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
     .hero-title {
-      display: inline-block;
-      text-align: center;
-      word-break: break-word;
-      white-space: normal;
-      line-height: 1.1;
-      padding-top: 60px;
-      font-size: 11rem;
+      font-size: 10rem;
       font-weight: 900;
+      line-height: 1.1;
       font-family: samarkan, sans-serif;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-image: url("https://4kwallpapers.com/images/wallpapers/indian-flag-tricolour-flag-national-flag-flag-of-india-5k-1536x2048-1546.jpg");
       background-size: 300% 300%;
-      animation: moveBG 40s linear infinite;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: moveBG 50s linear infinite;
       mix-blend-mode: screen;
     }
 
@@ -70,105 +65,128 @@ body {
 
     h2 {
       color: #aaa;
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-family: "Tagesschrift", samarkan;
       font-weight: 500;
     }
 
     p {
       color: #aaa;
-      font-size: 2rem;
-      margin-bottom: 40px;
+      font-size: 1.8rem;
       font-family: samarkan;
       font-weight: 500;
+      margin-bottom: 30px;
 
       span {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 50px;
+        font-size: 40px;
         color: yellow;
       }
     }
 
     .hero-cta {
-      background: linear-gradient(90deg, #6dfec2, #ff8e3e);
-      color: #111;
+      background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+      color: #002756;
       border: none;
-      padding: 14px 40px;
+      padding: 12px 35px;
       border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
       font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
       transition: all 0.3s ease;
 
       &:hover {
-        background: linear-gradient(90deg, #ff0000, #09ff00);
+        background: linear-gradient(135deg, #138808, #ffffff, #ff9933);
         transform: scale(1.05);
       }
     }
   }
 
-  // ✅ Responsive updates for tablet & mobile
+  // 🔵 Tablet View
   @media (max-width: 1024px) {
     .hero-content {
+      padding: 100px 15px 0;
+
       .hero-title {
         font-size: 6rem;
       }
 
       h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
 
       p {
-        font-size: 1.5rem;
-      }
+        font-size: 1.4rem;
 
-      .hero-cta {
-        padding: 12px 30px;
-        font-size: 0.9rem;
+        span {
+          font-size: 32px;
+        }
       }
     }
   }
 
+  // 🟡 Medium Mobile
   @media (max-width: 768px) {
+    height: 100vw; // Make height equal to width (square aspect)
+
+    .particles-background {
+      height: 100vw;
+    }
+
     .hero-content {
-      padding: 100px 10px 0;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 12px;
+      text-align: center;
 
       .hero-title {
         font-size: 4rem;
       }
 
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
 
       p {
-        font-size: 1rem;
+        font-size: 1.1rem;
+
         span {
-          font-size: 30px;
+          font-size: 28px;
         }
       }
 
       .hero-cta {
-        padding: 10px 25px;
+        padding: 10px 24px;
         font-size: 0.85rem;
       }
     }
   }
 
+  // 🟢 Small Mobile
   @media (max-width: 480px) {
+    height: 100vw;
+
+    .particles-background {
+      height: 100vw;
+    }
+
     .hero-content {
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
 
       h2 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       p {
-        font-size: 0.9rem;
+        font-size: 1rem;
+
         span {
-          font-size: 24px;
+          font-size: 22px;
         }
       }
 
